@@ -5,5 +5,7 @@ Implementação de testes automatizados com Jest e React Testing Library em uma 
 Para executar os testes:
 
 ```bash
+
+yarn install
 npm test -- --watchAll=false
 ```

@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import useEvent from '@testing-library/user-event'
-import Formulario from './index'
 import userEvent from '@testing-library/user-event'
+import Formulario from './index'
 
 describe('Deve rendererizar um campo de input', () => {
     test('Com o type number e que pode ser preenchido', () => {
@@ -15,5 +14,20 @@ describe('Deve rendererizar um campo de input', () => {
 
         expect(campoTexto).toHaveValue(50)
     })
+
+    test('Deve chamar um evento de onSubmit ao clicar em realizar transação', () => {
+
+        const realizarTransacao = jest.fn()
+
+        render(<Formulario 
+            realizarTransacao={realizarTransacao}
+        />)
+        const botao = screen.getByRole('button')
+
+        userEvent.click(botao)
+
+        expect(realizarTransacao).toHaveBeenCalledTimes(1)
+    })
+
 })
 
