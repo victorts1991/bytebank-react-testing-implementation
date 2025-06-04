@@ -14,3 +14,10 @@ test('Deve renderizar uma lista de links', () => {
 
     expect(listaDeLinks).toHaveLength(4)
 })
+
+test('Deve renderizar uma lista de links com a classe link', () => {
+    render(<Menu />)
+    const listaDeLinks = screen.getAllByRole('link')
+
+    listaDeLinks.forEach((link) => expect(link).toHaveClass('link'))
+})

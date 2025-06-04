@@ -5,5 +5,5 @@ Implementação de testes automatizados com Jest e React Testing Library em uma 
 Para executar os testes:
 
 ```bash
-npm run test
+npm test -- --watchAll=false
 ```
